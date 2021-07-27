@@ -82,6 +82,13 @@ public class PrintUtil {
         }
     }
 
+
+    // [5,4,8,11,null,13,4,7,2,null,null,5,1]
+    public TreeNode construct(String value){
+        TreeNode root = new TreeNode();
+        return root;
+    }
+
     public static void pLine() {
         System.out.println("----------------------------------------------------------------------------------------");
     }
