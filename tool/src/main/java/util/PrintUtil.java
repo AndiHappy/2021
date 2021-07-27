@@ -8,6 +8,11 @@ public class PrintUtil {
 
     private static final  String replace = "\\{\\}";
 
+    public static void p(int[] o) {
+        System.out.println(Arrays.toString(o));
+    }
+
+
     public static void p(Object o) {
         System.out.println(o);
     }
@@ -32,6 +37,14 @@ public class PrintUtil {
             }
         }
         return a;
+    }
+
+    public static <T> void p(T[] words, int left, int right, String spit) {
+        for (int i = left; i <= right ; i++) {
+            String value = words[i].toString() + (spit!=null?spit:"");
+            System.out.print(value );
+        }
+        System.out.println();
     }
 
 

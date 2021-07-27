@@ -14,6 +14,11 @@ public class App {
         }
     }
 
+
+    public int mySqrt(int x) {
+        return x;
+    }
+
     public static boolean isNumber(String s) {
         s=s.trim();
         boolean digitSeen = false;

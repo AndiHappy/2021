@@ -55,7 +55,6 @@ public class LeetCode074_Search_a_2D_Matirx {
         int l=0,r = m*n-1;
         while(l <= r){
             int mid = (l+r)/2;
-
             // translate to matrix
             int row = mid /m;
             int col = mid %m;
