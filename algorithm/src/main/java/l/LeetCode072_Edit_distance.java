@@ -1,4 +1,4 @@
-package second;
+package l;
 
 public class LeetCode072_Edit_distance {
     public static void main(String[] args) {
