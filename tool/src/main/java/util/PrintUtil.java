@@ -47,6 +47,46 @@ public class PrintUtil {
         System.out.println();
     }
 
+    public static TreeNode costructTreeNode(String s) {
+
+        String[] spit = s.split(",");
+        if(s.startsWith("[")){
+            for (int i = 0; i < spit.length; i++) {
+                spit[i] = spit[i].replaceAll("\\[","");
+                spit[i] = spit[i].replaceAll("]","");
+            }
+        }
+        TreeNode node = new TreeNode(Integer.parseInt(spit[0]));;
+        costructTreeNode(0,node,spit);
+        return node;
+
+    }
+
+    private static void costructTreeNode(int i, TreeNode node, String[] spit) {
+        if(2*i+1 < spit.length){
+            String value = spit[2*i+1];
+            if("null".equals(value)){
+                node.left = null;
+                return;
+            }else{
+                node.left = new TreeNode(Integer.parseInt(value));
+                costructTreeNode(2*i+1,node.left,spit);
+            }
+
+        }
+
+        if(2*(i + 1) < spit.length){
+            String value = spit[2*(i+1)];
+            if("null".equals(value)){
+                node.right = null;
+                return;
+            }else{
+                node.right = new TreeNode(Integer.parseInt(value));
+                costructTreeNode(2*(i+1),node.right,spit);
+            }
+        }
+    }
+
 
     private enum Level {
         SOIUT("consoult");
