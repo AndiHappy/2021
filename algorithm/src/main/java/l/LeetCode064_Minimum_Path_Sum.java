@@ -61,10 +61,10 @@ public class LeetCode064_Minimum_Path_Sum {
 
     public static void main(String[] args) {
         System.out.println("keep happy");
-       int[][] a = PrintUtil.costructIntArray("[[1,3,1],[1,5,1],[4,2,1]]");
+       int[][] a = PrintUtil.twoDimensionalArray("[[1,3,1],[1,5,1],[4,2,1]]");
         System.out.println(minPathSum(a));
 
-        a = PrintUtil.costructIntArray("[[1,2,3],[4,5,6]]");
+        a = PrintUtil.twoDimensionalArray("[[1,2,3],[4,5,6]]");
         System.out.println(minPathSum(a));
     }
 }

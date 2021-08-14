@@ -161,7 +161,7 @@ public class LeetCode073_Set_Matrix_Zeroes {
 
     public static void main(String[] args) {
         System.out.println("keep happy");
-        int[][] test = PrintUtil.costructIntArray("[[1,1,1],[1,0,1],[1,1,1]]");
+        int[][] test = PrintUtil.twoDimensionalArray("[[1,1,1],[1,0,1],[1,1,1]]");
         PrintUtil.pIntArray(test);
 //        setZeroesO_mn(test);
         setZeroesO_m_Plus_n(test);
@@ -169,7 +169,7 @@ public class LeetCode073_Set_Matrix_Zeroes {
         PrintUtil.pIntArray(test);
 
         PrintUtil.pLine();
-        test = PrintUtil.costructIntArray("[[0,1,2,0],[3,4,5,2],[1,3,1,5]]");
+        test = PrintUtil.twoDimensionalArray("[[0,1,2,0],[3,4,5,2],[1,3,1,5]]");
         PrintUtil.pIntArray(test);
 //        setZeroesO_mn(test);
         setZeroesO_m_Plus_n(test);

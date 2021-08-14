@@ -72,10 +72,10 @@ public class LeetCode074_Search_a_2D_Matirx {
 
     public static void main(String[] args) {
         System.out.println("keep happy");
-        int[][] test = PrintUtil.costructIntArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]");
+        int[][] test = PrintUtil.twoDimensionalArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]");
         System.out.println(searchMatrix(test,3));
 
-        test = PrintUtil.costructIntArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]");
+        test = PrintUtil.twoDimensionalArray("[[1,3,5,7],[10,11,16,20],[23,30,34,60]]");
         System.out.println(searchMatrix(test,13));
     }
 }
