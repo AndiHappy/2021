@@ -1,8 +1,6 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class PrintUtil {
 
@@ -98,6 +96,14 @@ public class PrintUtil {
         }
     }
 
+    public static Set<Integer> toSet(String s) {
+        HashSet<Integer> set = new HashSet<>();
+        String[] spit = s.split(",");
+        for (int i = 0; i < spit.length; i++) {
+            set.add(Integer.parseInt(spit[i]));
+        }
+        return set;
+    }
 
 
     private enum Level {
