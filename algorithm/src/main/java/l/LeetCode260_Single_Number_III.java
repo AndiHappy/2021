@@ -1,3 +1,5 @@
+package l;
+
 public class LeetCode260_Single_Number_III {
     /**
      * Once again, we need to use XOR (a XOR a = 0) to solve this problem.
