@@ -6,7 +6,7 @@ public class LeetCode289 {
 
     public static void main(String[] args) {
         System.out.println("keep Happy boy");
-        int[][] result = PrintUtil.costructIntArray("[[0,1,0],[0,0,1],[1,1,1],[0,0,0]]");
+        int[][] result = PrintUtil.twoDimensionalArray("[[0,1,0],[0,0,1],[1,1,1],[0,0,0]]");
         PrintUtil.pIntArray(result);
         System.out.println(result);
         PrintUtil.pIntArray(result);

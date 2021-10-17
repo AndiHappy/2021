@@ -1,8 +1,6 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class PrintUtil {
 
@@ -20,7 +18,7 @@ public class PrintUtil {
     /**
      * [[0,0,0],[0,1,0],[0,1,0],[0,1,0],[0,0,0]] 变为int的二维数组，这样方面一些代码
      * */
-    public static int[][] costructIntArray(String s) {
+    public static int[][] twoDimensionalArray(String s) {
         String[] spit = s.split("],");
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < spit.length; i++) {
@@ -38,6 +36,17 @@ public class PrintUtil {
         }
         return a;
     }
+
+    public static int[] oneDimensionalArray(String s) {
+        String[] spit = s.split(",");
+        int[] result = new int[spit.length];
+        for (int i = 0; i < spit.length; i++) {
+            String array = spit[i].replace("[","").replace("]","");
+            result[i] = Integer.parseInt(array);
+        }
+        return result;
+    }
+
 
     public static <T> void p(T[] words, int left, int right, String spit) {
         for (int i = left; i <= right ; i++) {
@@ -85,6 +94,15 @@ public class PrintUtil {
                 costructTreeNode(2*(i+1),node.right,spit);
             }
         }
+    }
+
+    public static Set<Integer> toSet(String s) {
+        HashSet<Integer> set = new HashSet<>();
+        String[] spit = s.split(",");
+        for (int i = 0; i < spit.length; i++) {
+            set.add(Integer.parseInt(spit[i]));
+        }
+        return set;
     }
 
 

@@ -2,8 +2,6 @@ package l;
 
 import util.PrintUtil;
 
-import java.util.Arrays;
-
 public class LeetCode063_Unique_Paths_II {
 
     /**
@@ -89,10 +87,10 @@ public class LeetCode063_Unique_Paths_II {
 
     public static void main(String[] args) {
         System.out.println("keep happy");
-        int[][] a = PrintUtil.costructIntArray("[[0,0,0],[0,1,0],[0,0,0]]");
+        int[][] a = PrintUtil.twoDimensionalArray("[[0,0,0],[0,1,0],[0,0,0]]");
         System.out.println(uniquePathsWithObstacles(a));
 
-        a=PrintUtil.costructIntArray("[[0,1],[0,0]]");
+        a=PrintUtil.twoDimensionalArray("[[0,1],[0,0]]");
         System.out.println(uniquePathsWithObstacles(a));
     }
 }
