@@ -33,8 +33,26 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public String longestCommonPrefix(String[] strs) {
-        
+    // 1 <= strs.length <= 200
+    // 0 <= strs[i].length <= 200
+    // strs[i] consists of only lower-case English letters.
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs == null || strs.length == 0) return "";
+        String tmp = strs[0];int i = 0;
+        for (; i < tmp.length(); i++) {
+            boolean math = math_j_th_character(strs,tmp.charAt(i),i);
+            if(!math)break;
+        }
+        return tmp.substring(0,i);
+    }
+
+    public static boolean math_j_th_character(String[] strs, char tmp,int index){
+        boolean result = true;
+        for (int i = 1; i <strs.length; i++) {
+            result = result && index < strs[i].length() && strs[i].charAt(index) == tmp;
+            if(!result) break;
+        }
+        return result;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -1,43 +1,41 @@
 
-import java.util.Stack;
+import java.util.*;
 
 import util.ListNode;
 import util.Parenthesees;
+import util.TreeNode;
+
 public class Test {
 
-    public static  boolean areNumbersAscending(String s) {
-        String[] splitArray = s.split(" ");
-        if(splitArray.length > 0){
-            int pre = 0;
-            for (int i = 0; i < splitArray.length; i++) {
-                String tmp = splitArray[i];
-                if(Character.isDigit(tmp.charAt(0))){
-                    Integer charInt = Integer.parseInt(tmp);
-                    if(charInt > pre){
-                        pre = charInt;
-                    }else{
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
+    /**
+     * 95. Unique Binary Search Trees II
+     * **/
 
+
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs == null || strs.length == 0) return "";
+        String tmp = strs[0];int i = 0;
+        for (; i < tmp.length(); i++) {
+            boolean math = math_j_th_character(strs,tmp.charAt(i),i);
+            if(!math)break;
+        }
+        return tmp.substring(0,i);
     }
 
-
+    public static boolean math_j_th_character(String[] strs, char tmp,int index){
+        boolean result = true;
+        for (int i = 1; i <strs.length; i++) {
+            result = result && index < strs[i].length() && strs[i].charAt(index) == tmp;
+            if(!result) break;
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
-        String s = "1 box has 3 blue 4 red 6 green and 12 yellow marbles";
-        System.out.println(areNumbersAscending(s));
+        System.out.println( longestCommonPrefix((String[]) Arrays.asList("flower","flow","flight").toArray()));
 
-        s = "hello world 5 x 5";
-        System.out.println(areNumbersAscending(s));
-
-        s = "sunset is at 7 51 pm overnight lows will be in the low 50 and 60";
-        System.out.println(areNumbersAscending(s));
-        s = "4 5 11 26";
-        System.out.println(areNumbersAscending(s));
+        System.out.println( longestCommonPrefix((String[]) Arrays.asList("dog","d").toArray()));
 
     }
+
 }
