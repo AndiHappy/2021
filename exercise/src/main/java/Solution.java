@@ -1,14 +1,6 @@
-import java.util.*;
+import util.ListNode;
 
 public class Solution {
 
-
-    public Solution(int[][] rects) {
-
-    }
-
-    public int[] pick() {
-        return null;
-    }
 
 }

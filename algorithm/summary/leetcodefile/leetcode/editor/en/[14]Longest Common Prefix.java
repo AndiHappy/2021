@@ -40,19 +40,16 @@ class Solution {
         if(strs == null || strs.length == 0) return "";
         String tmp = strs[0];int i = 0;
         for (; i < tmp.length(); i++) {
-            boolean math = math_j_th_character(strs,tmp.charAt(i),i);
-            if(!math)break;
+            if(!math_j_th_character(strs,tmp.charAt(i),i)) break;
         }
         return tmp.substring(0,i);
     }
 
     public static boolean math_j_th_character(String[] strs, char tmp,int index){
-        boolean result = true;
         for (int i = 1; i <strs.length; i++) {
-            result = result && index < strs[i].length() && strs[i].charAt(index) == tmp;
-            if(!result) break;
+            if(index >= strs[i].length() || strs[i].charAt(index) != tmp) return false;
         }
-        return result;
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
