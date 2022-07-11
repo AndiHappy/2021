@@ -112,6 +112,55 @@ public class LeetCode010 {
         return dp[s.length()][p.length()];
     }
 
+    /**
+     * s 目标字符串
+     * p 含有规则的字符串
+     * */
+    public static boolean isMatch_1(String s, String p) {
+        if(s == null || p == null) return false;
+        //dp[i][j] represent: from i to j:  s[i] is pattern p[j]
+        boolean[][] dp = new boolean[s.length()+1][p.length()+1];
+        // init
+        dp[0][0] = true;
+
+        // dp[i][0] is false represent:s="ssdd",p="",so is false;
+        //init: dp[0][j]
+        for(int j = 1;j< dp[0].length ; j++){
+            if(p.charAt(j-1) == '*' && (dp[0][j-1] || j>1 && dp[0][j-2])){
+                dp[0][j]=true;
+            }
+        }
+
+        // initialize dp
+        for(int i=1;i<dp.length;i++){
+            for (int j = 1; j < dp[0].length; j++) {
+                // s[i] == p[j],for example: “aa” == “aa” , so: dp[i][j] = dp[i-1][j-1]
+                // p[j] = '.' so: dp[i][j] = dp[i-1][j-1]
+                if (s.charAt(i - 1) == p.charAt(j - 1) || p.charAt(j - 1) == '.') {
+                    dp[i][j] = dp[i - 1][j - 1];
+                }
+
+                if(p.charAt(j-1) == '*'){
+                    // for example (aa ,a*)  or (aa ,.*)
+                    // i j 第几个字符，在dp的数组中指代，所以在s,p的下标就是i-1,j-1
+                    if(s.charAt(i-1) == p.charAt(j-2) || p.charAt(j-1) == '.' ){
+                        dp[i][j] = dp[i-1][j-1];
+                    }else{
+                        // dp[i][j-2], a* means ""
+                        // dp[i][j-1], a* means "a"
+                        // dp[i-1][j], a* means "aa"
+                        dp[i][j] = dp[i][j-2] || dp[i][j-1] || dp[i-1][j];
+                    }
+
+                }
+            }
+        }
+
+
+
+        return dp[s.length()][p.length()];
+    }
+
     public static void main(String[] args) {
         System.out.println("hello holiaday!");
         System.out.println(isMatch("aa", "a"));

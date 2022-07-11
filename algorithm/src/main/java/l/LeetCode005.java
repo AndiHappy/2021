@@ -93,6 +93,38 @@ public class LeetCode005 {
         return s.substring(from, to + 1);
     }
 
+
+    // Longest Palindromic Substring
+    // dp 解法
+    // dp[i][j] from i to j is palindromic substring
+    // dp[i][i]=true
+    // dp[i][j]= 【charAt(i) == charAt(j) && j-i == 1 】|| 【charAt(i) == charAt(j) &&
+    // dp[i+1][j-1] && i,j 不越界】
+    public static String longestPalindrome_1(String a) {
+
+        if (a == null || a.length() < 2) return a;
+        boolean[][] dp = new boolean[a.length()][a.length()];
+        int start = 0, end = 0;
+        for (int i = 0; i < a.length(); i++) dp[i][i] = true;
+        for (int i = a.length() - 2; i >= 0; i--) {
+            for (int j = i + 1; j < a.length(); j++) {
+                if (a.charAt(i) == a.charAt(j)
+                        && (j - i == 1
+                        || (i < a.length() - 1 && j > 0 && dp[i + 1][j - 1])
+                )) {
+                    dp[i][j] = true;
+                    if (j - i > (end - start)) {
+                        start = i;
+                        end = j;
+                    }
+                } else {
+                    dp[i][j] = false;
+                }
+            }
+        }
+        return a.substring(start, end + 1);
+    }
+
     public static void main(String[] args) {
         System.out.println(longestPalindrome("cabac"));
         System.out.println(longestPalindrome_dp("cabac"));

@@ -370,6 +370,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
      * @param propagate the return value from a tryAcquireShared
      */
     private void setHeadAndPropagate(Node node, int propagate) {
+        System.out.println(System.currentTimeMillis()+" setHeadAndPropagate: "+ node.name);
         Node h = head; // Record old head for check below
         setHead(node);
         /*
@@ -391,8 +392,11 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         if (propagate > 0 || h == null || h.waitStatus < 0 ||
             (h = head) == null || h.waitStatus < 0) {
             Node s = node.next;
-            if (s == null || s.isShared())
+            if (s == null || s.isShared()){
+                System.out.println(System.currentTimeMillis()+" doReleaseShared: "+ s.name);
                 doReleaseShared();
+            }
+
         }
     }
 
