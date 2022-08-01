@@ -46,16 +46,15 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        if(nums == null || nums.length < 2) return new int[2];
-        HashMap<Integer,Integer> tmp = new HashMap<Integer,Integer>();
-        tmp.put(nums[0],0);
-        for(int i = 1 ; i < nums.length ; i ++){
-            Integer one = tmp.get(target-nums[i]);
-            if(one != null){
-                return new int[]{one,i};
+    public static int[] twoSum(int[] nums, int target) {
+        if (nums == null || nums.length <= 1) return new int[2];
+        HashMap<Integer, Integer> cachePre = new HashMap<Integer, Integer>();
+        cachePre.put(nums[0],0);
+        for (int i = 1; i < nums.length; i++) {
+            if(cachePre.containsKey(target-nums[i])){
+                return new int[]{cachePre.get(target-nums[i]),i};
             }else{
-                tmp.put(nums[i],i);
+                cachePre.put(nums[i],i);
             }
         }
         return new int[2];
