@@ -1,4 +1,5 @@
-package l;//Given a string s, return the longest palindromic substring in s.
+package l;
+//Given a string s, return the longest palindromic substring in s.
 //
 // 
 // Example 1: 
