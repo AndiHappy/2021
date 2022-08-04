@@ -29,7 +29,7 @@ public class L08 {
      *
      * Return the integer as the final result.
      *
-     * secone: use math,iteration
+     * secone: use math,iteration_control
      * third：write the code
      * fourth：test the case
      *

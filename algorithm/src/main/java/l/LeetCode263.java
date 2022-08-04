@@ -31,7 +31,7 @@ public class LeetCode263 {
             }
         }
 
-        // Returns the next element in the iteration without advancing the iterator.
+        // Returns the next element in the iteration_control without advancing the iterator.
         public Integer peek() {
             return peek;
         }

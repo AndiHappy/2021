@@ -12,7 +12,7 @@ public class L11 {
      Return the maximum amount of water a container can store.
      Notice that you may not slant the container.
 
-     second: use iteration
+     second: use iteration_control
 
      third:write the code
      fourth: test the case
